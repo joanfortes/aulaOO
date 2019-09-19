@@ -9,7 +9,7 @@ package prova1;
  *
  * @author ice
  */
-public class Localizaçao {
+public class Localizacao {
     private double x,y;
 
     public void setX(double x) {

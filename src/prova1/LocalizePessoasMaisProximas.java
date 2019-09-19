@@ -18,29 +18,41 @@ public class LocalizePessoasMaisProximas {
        Pessoa p1 = new Pessoa();
        Pessoa p2 = new Pessoa();
        Pessoa p3 = new Pessoa();
+       Localizacao l1 = new Localizacao();
+       Localizacao l2 = new Localizacao();
+       Localizacao l3 = new Localizacao();
+       
        System.out.println("Digite o nome da primeira pessoa");
        p1.setNome(teclado.next());
        System.out.println("Digite as coordenadas");
-       p1.setLocalizaçao(teclado.nextDouble(), teclado.nextDouble());
+       l1.setX(teclado.nextDouble());
+       l1.setY(teclado.nextDouble());
+       p1.setLocalizacao(l1);
        
-       System.out.println("Digite o nome da segunda pessoa");
-       p2.setNome(teclado.next());
+       System.out.println("Digite o nome da primeira pessoa");
+       p1.setNome(teclado.next());
        System.out.println("Digite as coordenadas");
-       p2.setLocalizaçao(teclado.nextDouble(), teclado.nextDouble());
+       l2.setX(teclado.nextDouble());
+       l2.setY(teclado.nextDouble());
+       p1.setLocalizacao(l2);
        
-       System.out.println("Digite o nome da terceira pessoa");
-       p3.setNome(teclado.next());
+       System.out.println("Digite o nome da primeira pessoa");
+       p1.setNome(teclado.next());
        System.out.println("Digite as coordenadas");
-       p3.setLocalizaçao(teclado.nextDouble(), teclado.nextDouble());
+       l3.setX(teclado.nextDouble());
+       l3.setY(teclado.nextDouble());
+       p1.setLocalizacao(l3);
+       
+       
        
        double d1, d2;
-       d1 = Math.min(Pessoa.distanciaEntreDuasPessoas(p1.getLocalizaçao(), p2.getLocalizaçao()), Pessoa.distanciaEntreDuasPessoas(p1.getLocalizaçao(), p3.getLocalizaçao()));
-       d2 = Math.min(d1, Pessoa.distanciaEntreDuasPessoas(p2.getLocalizaçao(), p3.getLocalizaçao()));
+       d1 = Math.min(Pessoa.distanciaEntreDuasPessoas(p1.getLocalizacao(), p2.getLocalizacao()), Pessoa.distanciaEntreDuasPessoas(p1.getLocalizacao(), p3.getLocalizacao()));
+       d2 = Math.min(d1, Pessoa.distanciaEntreDuasPessoas(p2.getLocalizacao(), p3.getLocalizacao()));
        
-       if(d2 == Pessoa.distanciaEntreDuasPessoas(p1.getLocalizaçao(), p2.getLocalizaçao()))
+       if(d2 == Pessoa.distanciaEntreDuasPessoas(p1.getLocalizacao(), p2.getLocalizacao()))
            return p1.getNome() + p2.getNome();
        else
-           if(d2 == Pessoa.distanciaEntreDuasPessoas(p1.getLocalizaçao(), p3.getLocalizaçao()))
+           if(d2 == Pessoa.distanciaEntreDuasPessoas(p1.getLocalizacao(), p3.getLocalizacao()))
                return p1.getNome() + p3.getNome();
            else
                return p2.getNome() + p3.getNome();
